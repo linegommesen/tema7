@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+<!--    <link rel="stylesheet" href="style.css">-->
+<style>
+    img{
+    max-width: 100%;
+}
+
+article{
+        border: 1px solid black;
+    }
+header, footer{
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid black;
+}
+@media  (min-width: 600px){
+#opg1{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    border: 2px solid black;
+}
+}
+</style>
+</head>
+
+<body>
+   <main>
+     <header>
+      <h1>Titel</h1>
+       </header>
+        <h2>Undertitel</h2>
+       <section id="opg1">
+
+           <article>
+               <img src="billeder/billede_2.jpg" alt="">
+               <h3>Article 1</h3>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laborum, cum. Eligendi veritatis rerum voluptates dignissimos officiis ipsam id ea commodi suscipit minima doloremque ullam omnis hic, quos repellat quod, neque cupiditate molestias distinctio molestiae sed nobis voluptatum tempore amet. </p>
+           </article>
+           <article>
+               <img src="billeder/billede_3.jpg" alt="">
+               <h3>Article 2</h3>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laborum, cum. Eligendi veritatis rerum voluptates dignissimos officiis ipsam id ea commodi suscipit minima doloremque ullam omnis hic, quos repellat quod, neque cupiditate molestias distinctio molestiae sed nobis voluptatum tempore amet.</p>
+           </article>
+       </section>
+   </main>
+   <footer>This is a footer</footer>
+    <script></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+img{
+    max-width: 100%;
+}
+
+article{
+        border: 1px solid black;
+    }
+header, footer{
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid black;
+}
+@media  (min-width: 600px){
+#opg1{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    border: 2px solid black;
+}
+}
