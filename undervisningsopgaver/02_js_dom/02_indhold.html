@@ -52,6 +52,8 @@ header, footer{
    <footer>This is a footer</footer>
     <script>
     const titel = document.querySelector("header");
+//    titel.textContent = "Ny titel";
+    titel.innerHTML = "<h1>Ny titel</h1>";
     console.log(titel);
 
     const undertitel = document.querySelector("h2");
@@ -64,9 +66,11 @@ header, footer{
     console.log(articleFirst);
 
     const articleSecond = document.querySelector("article:first-child h3");
+    articleSecond.textContent = "Ny overskrift";
     console.log(articleSecond);
 
     const articleThird = document.querySelector("article:first-child p");
+    articleThird.innerHTML = "<p>Ny brødtekst</p>";
     console.log(articleThird);
 
     const secondArticleFirst = document.querySelector("article:nth-child(2) img");
