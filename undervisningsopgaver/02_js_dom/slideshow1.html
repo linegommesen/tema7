@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style></style>
+</head>
+
+<body>
+   <header>
+           <h1>Tro på det...</h1>
+       </header>
+   <main>
+      <img src="slide1_pics/img1.png" alt="">
+      <p>her er nogle billeder.</p>
+      <button>Videre</button>
+   </main>
+    <script>
+    let number = 0;
+
+    const billede = document.querySelector("img");
+   //array m. billeder
+    let billeder = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+    console.log(billeder[number]);
+
+    const knap = document.querySelector("button");
+        knap.addEventListener("click", videre)
+
+        function videre(){
+            if(number < 7){
+                number++;
+                billede.src = "slide1_pics/" + billeder[number];
+            }else{
+                number = 0;
+                billede.src = "slide1_pics/" + billeder[number];
+            }
+        }
+    </script>
+</body>
+</html>
