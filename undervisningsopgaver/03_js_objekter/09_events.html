@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        section{
+           display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-gap: 5px;
+        }
+        img{
+            max-width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+   <section id="liste"></section>
+   <template>
+       <article class="dyrene">
+          <img src="" alt="">
+           <h3></h3>
+           <p class="instruktør"></p>
+           <p class="spilletid"></p>
+
+       </article>
+   </template>
+    <script>
+
+    document.addEventListener("DOMContentLoaded", start);
+
+ let event = [
+     {"navn": "A Calling","instruktør": "Christian Bengtson ","billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/W6dOqabNhHKBPXxxKKEZRA84-720.jpg",
+     "spilletid": "20 min"},
+      {"navn": "A Hole In My Heart","instruktør": "Mees Peijnenburg","billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Q8K1pZrOs03Q0IrDkBwGVu5r-720.jpg",
+     "spilletid": "9 min"},
+      {"navn": "A Place In The Sun","instruktør": "Christian Zipfel","billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/hUd4SdGQ8I23ovxWnGtBz4Ck-720.jpg",
+     "spilletid": "20 min"},
+     {"navn": "A Tower of Two","instruktør": "Jacob Krzyszof","billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/Zdt2ODEqSVOkNe8nUaSSu8kd-360.jpg",
+     "spilletid": "21 min"},
+     {"navn": "A Worthy Man","instruktør": "Kristian Håskjold","billede": "https://odense-film-festival.s3.eu-central-1.amazonaws.com/media/2iUOgQpixgIQCxyLtY6KiYuU-720.jpg",
+     "spilletid": "19 min"},
+
+
+        ];
+
+    function start(){
+    const listevisning = document.querySelector("#liste");
+    const eventTemplate = document.querySelector("template");
+       console.log(event);
+  //løb listen igennem og indsæt data i template
+        event.forEach(event => {
+            //placer dyr i html
+           let klon = eventTemplate.cloneNode(true).content;
+             klon.querySelector("img").src= event.billede;
+            klon.querySelector("h3").textContent = event.navn;
+            klon.querySelector(".instruktør").textContent = "Instruktør:" + event.instruktør;
+            klon.querySelector(".spilletid").textContent = "Spilletid:" + event.spilletid;
+
+            listevisning.appendChild(klon);
+
+        })
+    }
+
+
+
+
+
+    </script>
+</body>
+</html>
