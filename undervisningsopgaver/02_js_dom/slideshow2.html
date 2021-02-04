@@ -29,14 +29,15 @@
     knap.addEventListener("click", videre);
 
     function videre(){
-            if(number < 7){
+         billede.src = "slide1_pics/" + billeder[number];
+            if(number <= 6){
                 knap.textContent = "videre";
                 number++;
-                billede.src = "slide1_pics/" + billeder[number];
+
             }else{
                 knap.textContent = "Forfra";
                 number = 0;
-                billede.src = "slide1_pics/" + billeder[number];
+
             }
 
         }
