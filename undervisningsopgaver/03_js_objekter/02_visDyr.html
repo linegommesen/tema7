@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <sstyle></sstyle>
+</head>
+
+<body>
+   <section>
+       <article></article>
+   </section>
+    <script>
+
+    document.addEventListener("DOMContentLoaded", start);
+    function start(){
+    console.log(start);
+
+    const article = document.querySelector("article:first-child");
+    console.log(article);
+    }
+ let dyr = {
+     "navn": "gris",
+     "type": "pattedyr",
+     "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+     "levested": "svinefarme"};
+
+    console.log(`navn:${dyr.navn}, type:${dyr.type}, billede:${dyr.billede}, levested:${dyr.levested}`);
+
+     //Ny article
+    let mainSection = document.querySelector ("section");
+    let newArticle = document.createElement("article");
+    mainSection.appendChild(newArticle);
+
+    //Tilføj brødtekst
+    let brødtekst = document.createElement("p");
+    let brødtekstText = document.createTextNode(`navn:${dyr.navn}, type:${dyr.type}, levested:${dyr.levested}`);
+    newArticle.appendChild(brødtekst);
+    brødtekst.appendChild(brødtekstText);
+
+    //Tilføj billede
+let billede = document.createElement("img");
+newArticle.src = "http://mabe-kea.dk/E19/pics/pig.png";
+newArticle.appendChild(billede);
+newArticle.querySelector("img").src = dyr.billede;
+
+
+    </script>
+</body>
+</html>

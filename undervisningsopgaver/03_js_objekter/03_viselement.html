@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <sstyle></sstyle>
+</head>
+
+<body>
+   <section>
+       <article id="dyr">
+           <h3></h3>
+           <img src="" alt="">
+           <p id="tekst1"></p>
+           <p id="tekst2"></p>
+       </article>
+   </section>
+    <script>
+
+    document.addEventListener("DOMContentLoaded", start);
+    function start(){
+    console.log(start);
+
+    const article = document.querySelector("article:first-child");
+    console.log(article);
+   };
+ let dyr = {
+     "navn": "gris",
+     "type": "pattedyr",
+     "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+     "levested": "svinefarme"};
+
+    console.log(`navn:${dyr.navn}, type:${dyr.type}, billede:${dyr.billede}, levested:${dyr.levested}`);
+
+//let img = document.querySelector("img");
+//let artikel = document.querySelector("article");
+//let tekst1 = document.querySelector("p #tekst1");
+//let tekst2 = document.querySelector("p #tekst2");
+//
+// let billede = document.querySelector("article:first-child img");
+//    img.src= dyr.billede;
+//    img.alt="Ny alt text";
+//    console.log(billede);
+//
+//let
+
+        const destination = document.querySelector("#dyr");
+        const overskrift =`${dyr.navn}`;
+        destination.querySelector("h3").textContent=overskrift;
+        destination.querySelector("#tekst1").textContent = "Type:" + dyr.type;
+        destination.querySelector("#tekst2").textContent ="Levested:" + dyr.levested;
+        destination.querySelector("img").src = dyr.billede;
+
+
+    </script>
+</body>
+</html>
