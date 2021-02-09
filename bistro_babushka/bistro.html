@@ -36,7 +36,7 @@
     </nav>
     <section id="liste"></section>
     <template>
-        <article>
+        <article class="menu">
             <img src="" alt="">
             <h2 class="navn"></h2>
             <p class="kategori"></p>
@@ -106,10 +106,15 @@
                     klon.querySelector(".kortbeskrivelse").textContent = menu.kortbeskrivelse;
                     klon.querySelector(".oprindelsesregion").textContent = menu.oprindelsesregion;
                     klon.querySelector(".pris").textContent = "Pris:" + menu.pris;
+                    klon.querySelector(".menu").addEventListener("click", () => visDetaljer(menu));
                     main.appendChild(klon);
                 }
             })
         }
         hentData();
+
+        function visDetaljer(ret){
+            location.href = `single.html?id=${ret._id}`;
+        }
     </script>
 </body></html>
