@@ -16,7 +16,7 @@
         <p class="køn"></p>
         <img src="" alt="" class="profil-billede">
     </article>
-<button>Tilbage til persongalleri</button>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
@@ -42,11 +42,6 @@
         function visPerson(){
             document.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
             document.querySelector(".profil-billede").src = medieurl + person.billede;
-            document.querySelector("button").addEventListener("click", tilbageTilGalleri);
-        }
-        function tilbageTilGalleri(){
-//            console.log(tilbageTilGalleri);
-            history.back();
         }
     </script>
 </body></html>
