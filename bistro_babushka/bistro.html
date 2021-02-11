@@ -3,12 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title></title>
     <style>
+        * {
+            background-color: #F2E6CE;
+        }
+
         section {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            grid-gap: 5px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 10px;
+            margin: 1rem 3rem 3rem 3rem;
         }
 
         img {
@@ -16,16 +25,69 @@
         }
 
         article {
-            border: 1px solid black;
+            /*            border: 1px solid #590F08;*/
+            background-color: #D9C196
+        }
+
+        h1 {
+            font-family: 'Stalinist One', cursive;
+            font-size: 4rem;
+            text-align: center;
+            color: #590F08;
+        }
+
+        .pris {
+            /*            font-family: 'Stalinist One', cursive;
+            font-size: 0.5rem;
+            margin: 5px;
+     text-align: center;*/
+            font-weight: bold;
+            color: #590F08;
+            margin-top: 1rem;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif, bold;
+            font-size: 1.2rem;
+            margin: 0.2rem;
+            /*            color: #D9C196;*/
+            color: #590F08;
+            background-color: #D9C196;
+
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+            margin: 0.4rem;
+            font-size: 14px;
+            /*            color: #590F08;*/
+            color: black;
+            background-color: #D9C196;
         }
 
         .valgt {
-            background-color: blue;
+            background-color: #590F08;
+            color: #D9C196;
+        }
+
+        button {
+            border: 1px solid #590F08;
+            border-radius: 20px;
+            width: 6rem;
+            height: 1.4rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            color: #590F08;
+            margin: 0.3rem 0.3rem 1rem 5rem;
+
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1>Bistro Babushka</h1>
+    </header>
     <nav>
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
@@ -34,6 +96,7 @@
         <button data-kategori="drikkevarer">Drikkevarer</button>
         <button data-kategori="sideorders">Sideorders</button>
     </nav>
+
     <section id="liste"></section>
     <template>
         <article class="menu">
@@ -55,7 +118,7 @@
 
         const myHeaders = {
 
-                "x-apikey": "600ec2fb1346a1524ff12de4"
+            "x-apikey": "600ec2fb1346a1524ff12de4"
 
         }
         document.addEventListener("DOMContentLoaded", start);
@@ -102,10 +165,10 @@
                     const klon = template.cloneNode(true);
                     klon.querySelector("img").src = medieurl + menu.billede[0];
                     klon.querySelector(".navn").textContent = menu.navn;
-                    klon.querySelector(".kategori").textContent = menu.kategori;
+                    //                    klon.querySelector(".kategori").textContent = menu.kategori;
                     klon.querySelector(".kortbeskrivelse").textContent = menu.kortbeskrivelse;
-                    klon.querySelector(".oprindelsesregion").textContent = menu.oprindelsesregion;
-                    klon.querySelector(".pris").textContent = "Pris:" + menu.pris;
+                    klon.querySelector(".oprindelsesregion").textContent = "Oprindelsesregion:" + " " + menu.oprindelsesregion;
+                    klon.querySelector(".pris").textContent = "Pris:" + " " + menu.pris + "kr.";
                     klon.querySelector(".menu").addEventListener("click", () => visDetaljer(menu));
                     main.appendChild(klon);
                 }
@@ -113,7 +176,7 @@
         }
         hentData();
 
-        function visDetaljer(ret){
+        function visDetaljer(ret) {
             location.href = `single.html?id=${ret._id}`;
         }
     </script>
